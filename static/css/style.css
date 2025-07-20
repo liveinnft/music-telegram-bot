@@ -1,0 +1,222 @@
+/* Основные стили */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Главная страница */
+.hero-section {
+    padding: 4rem 0;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.cta-section {
+    padding: 3rem 0;
+}
+
+/* Дашборд */
+.sidebar {
+    min-height: calc(100vh - 100px);
+    position: sticky;
+    top: 20px;
+}
+
+.nav-pills .nav-link {
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.stat-item {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+/* Плеер */
+.player-section .card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.player-section .btn {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.player-section .btn:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.player-section .btn-primary {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+}
+
+.player-section .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-bar {
+    background-color: white;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+}
+
+.form-range {
+    width: 100px;
+}
+
+/* Треки */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.content-section {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Карточки альбомов и плейлистов */
+.album-card, .playlist-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.album-card:hover, .playlist-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.album-cover, .playlist-cover {
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.album-cover i, .playlist-cover i {
+    color: white !important;
+}
+
+/* Респонсивность */
+@media (max-width: 768px) {
+    .player-section .row > div {
+        margin-bottom: 1rem;
+    }
+    
+    .player-controls {
+        margin-bottom: 1rem;
+    }
+    
+    .volume-control {
+        justify-content: center;
+    }
+    
+    .time-display {
+        text-align: center !important;
+    }
+    
+    .sidebar {
+        min-height: auto;
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Анимации загрузки */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Состояния кнопок */
+.btn-playing {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.btn-shuffle-active {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+/* Активный трек в таблице */
+.track-playing {
+    background-color: rgba(40, 167, 69, 0.1) !important;
+    border-left: 4px solid #28a745;
+}
+
+/* Уведомления */
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+}
+
+.toast {
+    background: white;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

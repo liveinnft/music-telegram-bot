@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Музыкальный бот - Песенник</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-music me-2"></i>
+                Музыкальный Песенник
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="hero-section text-center mb-5">
+                    <div class="hero-icon mb-4">
+                        <i class="fas fa-headphones fa-5x text-primary"></i>
+                    </div>
+                    <h1 class="display-4 mb-3">Добро пожаловать в Музыкальный Песенник!</h1>
+                    <p class="lead text-muted mb-4">
+                        Управляйте своей музыкальной коллекцией прямо из Telegram. 
+                        Создавайте альбомы, плейлисты и наслаждайтесь любимой музыкой.
+                    </p>
+                </div>
+
+                <div class="features-section">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="feature-card card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="feature-icon mb-3">
+                                        <i class="fas fa-upload fa-3x text-success"></i>
+                                    </div>
+                                    <h5 class="card-title">Загрузка музыки</h5>
+                                    <p class="card-text text-muted">
+                                        Отправляйте аудио файлы боту в Telegram и они автоматически добавятся в вашу библиотеку
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="feature-card card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="feature-icon mb-3">
+                                        <i class="fas fa-layer-group fa-3x text-info"></i>
+                                    </div>
+                                    <h5 class="card-title">Альбомы и плейлисты</h5>
+                                    <p class="card-text text-muted">
+                                        Организуйте музыку в альбомы и создавайте персональные плейлисты для любого настроения
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="feature-card card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="feature-icon mb-3">
+                                        <i class="fas fa-play-circle fa-3x text-warning"></i>
+                                    </div>
+                                    <h5 class="card-title">Веб-плеер</h5>
+                                    <p class="card-text text-muted">
+                                        Слушайте музыку прямо в браузере с удобным интерфейсом и полным контролем воспроизведения
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section text-center mt-5">
+                    <h3 class="mb-3">Начните использовать прямо сейчас!</h3>
+                    <p class="text-muted mb-4">Откройте Telegram и найдите бота, чтобы начать создавать свою музыкальную коллекцию</p>
+                    <a href="https://t.me/YourMusicBotName" class="btn btn-primary btn-lg me-3">
+                        <i class="fab fa-telegram-plane me-2"></i>
+                        Открыть в Telegram
+                    </a>
+                    <button class="btn btn-outline-secondary btn-lg" onclick="showDemo()">
+                        <i class="fas fa-play me-2"></i>
+                        Посмотреть демо
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="fas fa-music me-2"></i>
+                Музыкальный Песенник - Ваша персональная музыкальная библиотека
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showDemo() {
+            alert('Демо будет доступно в ближайшее время! А пока попробуйте бота в Telegram.');
+        }
+    </script>
+</body>
+</html>
