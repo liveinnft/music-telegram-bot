@@ -42,8 +42,17 @@ class MusicBot:
             keyboard = [
                 [InlineKeyboardButton("🎵 Мои альбомы", callback_data="view_albums")],
                 [InlineKeyboardButton("📝 Мои плейлисты", callback_data="view_playlists")],
-                [InlineKeyboardButton("🌐 Веб-приложение", web_app={"url": f"http://{config.FLASK_HOST}:{config.FLASK_PORT}/web/{user.telegram_id}"})]
             ]
+            
+            web_url = f"{config.WEB_BASE_URL}/web/{user.telegram_id}"
+            
+            # Добавляем WebApp кнопку только если поддерживается HTTPS
+            if config.USE_WEBAPP_BUTTON:
+                keyboard.append([InlineKeyboardButton("🌐 Веб-приложение", web_app={"url": web_url})])
+                web_message = ""
+            else:
+                web_message = f"\n\n🌐 Веб-интерфейс: {web_url}"
+            
             reply_markup = InlineKeyboardMarkup(keyboard)
             
             await update.message.reply_text(
@@ -54,7 +63,7 @@ class MusicBot:
                 "• Создавать альбомы и плейлисты\n"
                 "• Прослушивать добавленную музыку\n"
                 "• Веб-интерфейс для удобного управления\n\n"
-                "Просто отправь мне аудио файл, чтобы начать! 🎧",
+                f"Просто отправь мне аудио файл, чтобы начать! 🎧{web_message}",
                 reply_markup=reply_markup
             )
         finally:
